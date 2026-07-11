@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Симулятор восприятия — локальное Chrome-расширение для проверки интерфейсов в режимах дальтонизма, катаракты, туннельного зрения, дислексии и тремора.">
+    <meta name="theme-color" content="#0a0b0b">
+    <title>Симулятор восприятия — проверка доступности интерфейсов</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Симулятор восприятия — главная">
+        <span class="brand-eye" aria-hidden="true"><i></i></span>
+        <span>Симулятор восприятия</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#features">Возможности</a>
+        <a href="#demo">UI расширения</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <a class="button button--small" href="./">Установить в Chrome</a>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="kicker"><span></span> ЛОКАЛЬНЫЙ ИНСТРУМЕНТ ДЛЯ UI-ПРОВЕРОК</p>
+          <h1>Посмотри на интерфейс <em>другими глазами</em></h1>
+          <p class="hero-lead">Chrome-расширение помогает быстро увидеть, что происходит с контрастом, текстом, периферией и интерактивными целями при разных сценариях восприятия.</p>
+          <div class="hero-actions">
+            <a class="button" href="./">Установить в Chrome <span aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="#demo">Посмотреть UI</a>
+          </div>
+          <ul class="trust-list" aria-label="Преимущества">
+            <li>Без отправки данных</li>
+            <li>RU / EN</li>
+            <li>Светлая и тёмная темы</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="Пример интерфейса расширения">
+          <div class="spotlight spotlight--one"></div>
+          <div class="spotlight spotlight--two"></div>
+          <div class="mini-popup">
+            <div class="mini-top"><span>▲ СИМУЛЯТОР ВОСПРИЯТИЯ</span><b>RU · ☾</b></div>
+            <h2>Как это видится?</h2>
+            <div class="mini-mode is-active"><span>👁</span><div><b>Обычное зрение</b><small>как видишь ты</small></div><i>✓</i></div>
+            <div class="mini-mode"><span>◐</span><div><b>Дальтонизм</b><small>два варианта цвета</small></div></div>
+            <div class="mini-mode"><span>◫</span><div><b>Катаракта</b><small>регулируемое размытие</small></div></div>
+            <div class="mini-diagnosis">
+              <small>▲ ДИАГНОЗ ИНТЕРФЕЙСА</small>
+              <b>Всё работает</b>
+              <p>Кнопки заметны, важная информация ясна, визуал считывается.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features section-shell">
+        <div class="section-heading">
+          <p class="kicker"><span></span> ВОЗМОЖНОСТИ</p>
+          <h2>Семь режимов.<br>Один быстрый тест.</h2>
+          <p>Переключай состояние, изучай подсказку и сразу находи слабые места интерфейса.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card feature-card--accent"><span class="feature-number">01</span><h3>Визуальные фильтры</h3><p>Дальтонизм, катаракта, туннельное и пьяное восприятие накладываются только на активную вкладку.</p></article>
+          <article class="feature-card"><span class="feature-number">02</span><h3>Текст и моторика</h3><p>Дислексия двигает заголовки или весь текст, а тремор усложняет попадание по интерактивным целям.</p></article>
+          <article class="feature-card"><span class="feature-number">03</span><h3>Подсказки для UI</h3><p>Каждый режим объясняет проблему и предлагает конкретные улучшения интерфейса.</p></article>
+          <article class="feature-card"><span class="feature-number">04</span><h3>Контроль на странице</h3><p>Закреплённая панель позволяет менять параметры и отключать эффект, не открывая popup.</p></article>
+        </div>
+      </section>
+
+      <section id="demo" class="demo-section section-shell">
+        <div class="section-heading section-heading--center">
+          <p class="kicker"><span></span> UI РАСШИРЕНИЯ</p>
+          <h2>Попробуй интерфейс</h2>
+          <p>Это интерактивное демо popup. Выбери режим, язык или тему — страница покажет соответствующую диагностику.</p>
+        </div>
+
+        <div id="extension-demo" class="extension-demo" data-demo-theme="dark">
+          <div class="demo-toolbar">
+            <div><small data-copy="simulator">СИМУЛЯТОР ВОСПРИЯТИЯ</small><h3 data-copy="question">Как это видится?</h3></div>
+            <div class="demo-controls">
+              <select id="demo-language" aria-label="Язык демо"><option value="ru">RU</option><option value="en">EN</option></select>
+              <button id="demo-theme" type="button" aria-label="Переключить тему">☾</button>
+            </div>
+          </div>
+          <p class="demo-intro" data-copy="intro">Выберите режим — он применится только к текущей вкладке.</p>
+          <div id="demo-modes" class="demo-modes"></div>
+          <div id="demo-setting" class="demo-setting" hidden></div>
+          <article class="demo-diagnosis">
+            <small id="demo-label"></small>
+            <h4 id="demo-title"></h4>
+            <p id="demo-text"></p>
+            <button id="demo-advice-toggle" type="button">Свернуть</button>
+            <div id="demo-advice"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="privacy-callout section-shell">
+        <div>
+          <p class="kicker"><span></span> PRIVACY BY DEFAULT</p>
+          <h2>Страница остаётся в браузере</h2>
+          <p>Расширение не отправляет содержимое сайтов, историю просмотра или аналитику. Настройки хранятся локально на устройстве.</p>
+        </div>
+        <a class="button button--secondary" href="privacy.html">Политика конфиденциальности</a>
+      </section>
+
+      <section class="final-cta section-shell">
+        <p class="kicker"><span></span> ПРОВЕРЬ СВОЙ ИНТЕРФЕЙС</p>
+        <h2>То, что видно тебе,<br>видно не всем.</h2>
+        <p>Переключи состояние и посмотри, что останется.</p>
+        <a class="button" href="./">Установить в Chrome <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="footer section-shell">
+      <a class="brand" href="./"><span class="brand-eye" aria-hidden="true"><i></i></span><span>Симулятор восприятия</span></a>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="https://t.me/ultraproduct" target="_blank" rel="noopener noreferrer">Создатель расширения — t.me/ultraproduct</a>
+      </div>
+      <p>© 2026</p>
+    </footer>
+
+    <script src="site.js"></script>
+  </body>
+</html>
