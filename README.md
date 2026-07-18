@@ -2,6 +2,9 @@
 
 Static landing page for the Perception Simulator Chrome extension.
 
+![Симулятор восприятия](https://raw.githubusercontent.com/SergeyBukharev/perceptions/refs/heads/main/1200x630_2.png "Perception Simulator 2.0")
+
+
 ## Files
 
 - `index.html` — landing page and interactive extension UI demo.
