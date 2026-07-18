@@ -3,88 +3,44 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Политика конфиденциальности Chrome-расширения «Симулятор восприятия».">
-    <meta name="theme-color" content="#0a0b0b">
-    <title>Privacy — Симулятор восприятия</title>
+    <meta name="description" content="Политика конфиденциальности Perception Simulator.">
+    <meta name="theme-color" content="#252525">
+    <title>Политика конфиденциальности — Perception Simulator</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="./" aria-label="Симулятор восприятия — главная">
-        <span class="brand-eye" aria-hidden="true"><i></i></span>
-        <span>Симулятор восприятия</span>
-      </a>
-      <nav class="nav" aria-label="Основная навигация">
-        <a href="./#features">Возможности</a>
-        <a href="./#demo">UI расширения</a>
-        <a href="privacy.html" aria-current="page">Privacy</a>
-      </nav>
-      <a class="button button--small" href="./">Установить в Chrome</a>
+  <body data-theme="dark" data-page="privacy">
+    <header class="header shell">
+      <a class="brand" href="./" data-i18n-aria-label="brandAria"><img src="assets/logo.png" width="42" height="42" alt=""><span>Perception<br>Simulator</span></a>
+      <div class="header-actions">
+        <div class="language-toggle" role="group" data-i18n-aria-label="languageAria">
+          <button type="button" data-language-choice="ru" aria-pressed="true">RU</button>
+          <button type="button" data-language-choice="en" aria-pressed="false">ENG</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" type="button" data-i18n-aria-label="themeAria" data-i18n-title="themeAria" title="Переключить тему">☾</button>
+        <a class="button button--compact" href="./" data-i18n="home">На главную</a>
+      </div>
     </header>
-
-    <main class="privacy-page section-shell">
-      <header class="privacy-hero">
-        <p class="kicker"><span></span> PRIVACY POLICY</p>
-        <h1>Политика конфиденциальности</h1>
-        <p>Для Chrome-расширения «Симулятор восприятия». Дата вступления в силу: 11 июля 2026 года.</p>
-      </header>
-
-      <div class="privacy-content">
-        <section>
-          <h2>Коротко</h2>
-          <p>Расширение не собирает, не продаёт и не передаёт персональные данные, историю браузера, содержимое страниц, данные форм или аналитику на серверы разработчика или третьих лиц.</p>
-        </section>
-        <section>
-          <h2>Как работает расширение</h2>
-          <p>Пользователь самостоятельно выбирает визуальный эффект в popup расширения. Эффект применяется локально только к активной вкладке, к которой пользователь предоставил временный доступ.</p>
-          <p>Обработка текста и изображения страницы необходима исключительно для отображения выбранной симуляции и происходит внутри браузера. Содержимое страницы никуда не отправляется.</p>
-        </section>
-        <section>
-          <h2>Локальные настройки</h2>
-          <p>В локальном хранилище Chrome могут сохраняться:</p>
-          <ul>
-            <li>выбранный язык и тема popup;</li>
-            <li>последний режим симуляции;</li>
-            <li>сила размытия катаракты;</li>
-            <li>вариант дальтонизма, тремора и охвата текста при дислексии.</li>
-          </ul>
-          <p>Эти данные остаются на устройстве. Их можно удалить вместе с данными расширения или при удалении самого расширения.</p>
-        </section>
-        <section>
-          <h2>Разрешения Chrome</h2>
-          <p><strong>activeTab</strong> используется для временного доступа к вкладке после явного действия пользователя. <strong>scripting</strong> добавляет выбранный визуальный эффект. <strong>storage</strong> сохраняет локальные настройки интерфейса.</p>
-        </section>
-        <section>
-          <h2>Передача данных и сторонние сервисы</h2>
-          <p>Расширение не содержит аналитики, рекламы, удалённого кода и сетевых запросов для передачи пользовательских данных. Данные не продаются, не используются для профилирования и не передаются третьим лицам.</p>
-        </section>
-        <section>
-          <h2>Назначение продукта</h2>
-          <p>«Симулятор восприятия» — учебный инструмент для проверки интерфейсов. Он не является медицинским устройством, не ставит диагноз и не воспроизводит индивидуальный опыт конкретного человека.</p>
-        </section>
-        <section>
-          <h2>Контакты</h2>
-          <p>Создатель расширения: <a href="https://t.me/ultraproduct" target="_blank" rel="noopener noreferrer">https://t.me/ultraproduct</a>.</p>
-        </section>
-
-        <section lang="en">
-          <h2>English summary</h2>
-          <p>Perception Simulator does not collect, sell, transmit, or share personal information, browsing history, page content, form data, or analytics. User-selected effects are processed locally in the active tab. Language, theme, effect mode, and effect preferences may be stored in Chrome’s local extension storage. No remote code, advertising, or tracking is included.</p>
-          <p>Perception Simulator is an educational interface-testing tool, not a medical device or diagnostic tool. Contact: <a href="https://t.me/ultraproduct" target="_blank" rel="noopener noreferrer">https://t.me/ultraproduct</a>.</p>
-        </section>
+    <main class="shell privacy-page">
+      <p class="eyebrow">▲ PRIVACY POLICY</p>
+      <h1><span data-i18n="privacyLink">Политика конфиденциальности</span></h1>
+      <p class="privacy-lead" data-i18n="privacyUpdate">Последнее обновление: 18 июля 2026 года.</p>
+      <div class="policy-grid">
+        <section><h2 data-i18n="privacyShortTitle">Коротко</h2><p data-i18n="privacyShortCopy">Perception Simulator не продаёт, не передаёт и не использует для рекламы персональные данные, историю просмотров, содержимое страниц, данные форм или аналитику.</p></section>
+        <section><h2 data-i18n="privacyDoesTitle">Что делает расширение</h2><p data-i18n="privacyDoesCopy">Расширение накладывает выбранные визуальные эффекты на текущую вкладку: симулирует разные сценарии восприятия и помогает проверять доступность интерфейсов. Это учебный инструмент, а не медицинская модель и не средство диагностики.</p></section>
+        <section><h2 data-i18n="privacyLocalTitle">Локальная обработка</h2><p data-i18n="privacyLocalCopy">Обработка эффектов происходит в браузере на устройстве пользователя. Настройки — язык, тема, выбранный режим и параметры фильтров — могут храниться в локальном хранилище Chrome, чтобы восстанавливаться между запусками.</p></section>
+        <section><h2 data-i18n="privacyTabsTitle">Содержимое вкладок</h2><p data-i18n="privacyTabsCopy">Расширение применяет визуальные слои к страницам, на которых пользователь включает эффект. Оно не отправляет содержимое страниц, учётные данные, формы или историю просмотров на внешний сервер.</p></section>
+        <section><h2 data-i18n="privacyCrtTitle">CRT и WebGL</h2><p data-i18n="privacyCrtCopy">Для GPU-обработки CRT-эффекта может использоваться локальный кадр активной вкладки. Он остаётся в памяти браузера, не сохраняется в файл и не передаётся разработчику или третьим лицам.</p></section>
+        <section><h2 data-i18n="privacyRemoteTitle">Удалённый код и сторонние сервисы</h2><p data-i18n="privacyRemoteCopy">В расширении нет удалённого кода, рекламы, аналитики или трекеров. Для работы визуальных эффектов не выполняются сетевые запросы к сервисам разработчика.</p></section>
+        <section><h2 data-i18n="privacyChoiceTitle">Ваш выбор</h2><p data-i18n="privacyChoiceCopy">Вы можете отключить активный фильтр в popup или удалить расширение вместе с его локальными настройками через страницу управления расширениями Chrome.</p></section>
+        <section><h2 data-i18n="privacyContactTitle">Контакт</h2><p><span data-i18n="privacyContactPrefix">По вопросам приватности и работы расширения:</span> <a href="https://t.me/ultraproduct" target="_blank" rel="noopener noreferrer">t.me/ultraproduct</a>.</p></section>
       </div>
     </main>
-
-    <footer class="footer section-shell">
-      <a class="brand" href="./"><span class="brand-eye" aria-hidden="true"><i></i></span><span>Симулятор восприятия</span></a>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="https://t.me/ultraproduct" target="_blank" rel="noopener noreferrer">Создатель расширения — t.me/ultraproduct</a>
-        <a href="https://viktoriafilippova.github.io/perception-simulato/" target="_blank" rel="noopener noreferrer">Автор оригинальной идеи проверки UI</a>
-
-        
-      </div>
-      <p>© 2026</p>
+    <footer class="footer shell">
+      <div class="footer-brand"><a class="brand" href="./"><img src="assets/logo.png" width="42" height="42" alt=""><span>Perception<br>Simulator</span></a></div>
+      <div class="authors" data-i18n-aria-label="authorsAria"><p><span data-i18n="ideaAuthor">Автор идеи:</span> <a href="https://t.me/Kikodoc" target="_blank" rel="noopener noreferrer">Viktoria Filippova</a><img src="assets/author-viktoria.jpg" alt="Viktoria Filippova"></p><p><span data-i18n="extensionAuthor">Создатель расширения:</span> <a href="https://t.me/ultraproduct" target="_blank" rel="noopener noreferrer">Sergey Buharev</a><img src="assets/author-sergey.jpg" alt="Sergey Buharev"></p></div>
+      <div class="footer-links"><a href="./" data-i18n="home">На главную</a><span>© 2026</span></div>
     </footer>
+    <script src="site.js"></script>
   </body>
 </html>
